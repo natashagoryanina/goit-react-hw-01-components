@@ -1,29 +1,39 @@
 import React from 'react'; 
+import PropTypes from 'prop-types';
+import styles from './Profile.module.css';
 
 const Profile = ({name, tag, location, avatar, stats}) => {
     return (
-        <div class="profile">
-            <div class="description">
+        <div className={styles.profile}>
+            <div className={styles.description}>
                 <img
                 src={avatar}
                 alt="Аватар пользователя"
-                class="avatar"
+                className={styles.avatar}
                 />
-                <p class="name">{name}</p>
-                <p class="tag">@{tag}</p>
-                <p class="location">{location}</p>
+                <p className={styles.name}>{name}</p>
+                <p className={styles.tag}>@{tag}</p>
+                <p className={styles.location}>{location}</p>
             </div>
 
-            <ul class="stats">
+            <ul className={styles.stats}>
                 {Object.entries(stats).map((item) =>(
-                    <li>
-                        <span class="label">{item[0]}</span>
-                        <span class="quantity">1{item[1]}</span>
+                    <li className={styles.statsItem}>
+                        <span className={styles.label}>{item[0]}</span>
+                        <span className={styles.quantity}>1{item[1]}</span>
                     </li>
                 ))}
             </ul>
         </div>
     );
+};
+
+Profile.propTypes = {
+    name: PropTypes.string,
+    tag: PropTypes.string,
+    location: PropTypes.string,
+    avatar: PropTypes.string, 
+    stats: PropTypes.objectOf(PropTypes.number)
 };
 
 export default Profile;

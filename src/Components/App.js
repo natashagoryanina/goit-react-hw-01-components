@@ -14,9 +14,9 @@ const App = () => {
             location={data.user.location}
             avatar={data.user.avatar}
             stats={data.user.stats}
-            />,
+            />
             <Statistics title="Upload stats" 
-            stats={data.statisticalData} />,
+            stats={data.statisticalData} />
             <FriendList friends={data.friends} />
             <TransactionHistory items={data.transactions}/>
         </main>
