@@ -28,7 +28,7 @@ const TransactionHistory = ({items}) => {
 };
 
 TransactionHistory.propTypes = {
-    items: PropTypes.arrayOf(PropTypes.string)
+    items: PropTypes.arrayOf(PropTypes.object)
 };
 
 export default TransactionHistory;
